@@ -19,10 +19,21 @@
   <body>
     <div class="site-wrap">
       <header class="site-header">
-        <button class="site-title site-title-button" data-nav-target="home" type="button">
-          Siyu (Louisa) Chen
-        </button>
-        <nav class="site-nav" aria-label="Primary">
+        <div class="site-header-top">
+          <button class="site-title site-title-button" data-nav-target="home" type="button">
+            Siyu (Louisa) Chen
+          </button>
+          <button
+            class="mobile-nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open navigation menu"
+          >
+            ☰
+          </button>
+        </div>
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
           <button class="nav-link active" data-nav-target="home" type="button">Home</button>
           <button class="nav-link" data-nav-target="research" type="button">Research</button>
           <button class="nav-link" data-nav-target="teaching" type="button">Teaching</button>
@@ -34,34 +45,9 @@
       <main class="view-frame">
         <section class="view-panel active" data-panel="home">
           <div class="hero">
-            <div class="hero-copy">
+            <div class="hero-intro">
               <h1>Hi, my name is<br />Louisa Chen.</h1>
               <p class="hero-kicker">🧠 Psychology Ph.D. Student @ Emory University</p>
-              <p class="lead">
-                I'm a PhD student in the
-                <a href="https://psychology.emory.edu/graduate/cognitive-computational-sciences.html">Cognitive and Computational Sciences program</a>
-                at Emory University Psychology Department where I am advised by
-                <a href="https://babllab.com/meet-the-team/">Dr. Brianna L. Yamasaki</a>.
-              </p>
-              <p>
-                My work combines behavioral experiments, neuroimaging, 
-                and computational approaches to understand how bilingual 
-                people process different languages. I am especially interested 
-                in <span class="inline-emphasis">how bilingual children control their languages and how 
-                second-language exposure shapes brain and behavior 
-                across the lifespan.</span>
-              </p>
-              <p>
-                Before coming to Emory, I obtained a B.A. in Psychology
-                (Honors) with minors in Data Science and Informatics at the
-                University of Washington. There I worked with
-                <a href="https://andreastocco.com/">Dr. Andrea Stocco</a> on my
-                honors project.
-              </p>
-              <p>
-                You can reach me at
-                <a href="mailto:sche899@emory.edu">sche899@emory.edu</a>.
-              </p>
             </div>
 
             <aside class="hero-photo-wrap" aria-label="Profile photo">
@@ -98,6 +84,34 @@
                 </button>
               </div>
             </aside>
+
+            <div class="hero-copy">
+              <p class="lead">
+                I'm a PhD student in the
+                <a href="https://psychology.emory.edu/graduate/cognitive-computational-sciences.html">Cognitive and Computational Sciences program</a>
+                at Emory University Psychology Department where I am advised by
+                <a href="https://babllab.com/meet-the-team/">Dr. Brianna L. Yamasaki</a>.
+              </p>
+              <p>
+                My work combines behavioral experiments, neuroimaging, 
+                and computational approaches to understand how bilingual 
+                people process different languages. I am especially interested 
+                in <span class="inline-emphasis">how bilingual children control their languages and how 
+                second-language exposure shapes brain and behavior 
+                across the lifespan.</span>
+              </p>
+              <p>
+                Before coming to Emory, I obtained a B.A. in Psychology
+                (Honors) with minors in Data Science and Informatics at the
+                University of Washington. There I worked with
+                <a href="https://andreastocco.com/">Dr. Andrea Stocco</a> on my
+                honors project.
+              </p>
+              <p>
+                You can reach me at
+                <a href="mailto:sche899@emory.edu">sche899@emory.edu</a>.
+              </p>
+            </div>
           </div>
 
           <section class="home-section">
