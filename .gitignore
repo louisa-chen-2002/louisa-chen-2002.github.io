@@ -1,0 +1,40 @@
+# Ignore everything by default so we only publish the live site files.
+*
+
+# Keep the git metadata and this ignore file itself.
+!.gitignore
+!.nojekyll
+
+# Core site files
+!index.html
+!styles.css
+!script.js
+!Louisa_Chen_CV_0826.pdf
+
+# Linked poster and PDF assets
+!files/
+!files/MARC_Poster6.0.pdf
+!files/DEF_poster_psychonomic_2.pdf
+!files/CogSci Poster.pdf
+
+# Homepage profile image
+!pics/
+!pics/DSCF9063 2.jpg
+
+# Blog images
+!pics/photo/
+!pics/photo/more-about-childhood.jpg
+!pics/photo/kanhai-feature.jpg
+!pics/photo/mixiaohui-feature.jpg
+!pics/photo/chufaqian-feature-fixed.jpg
+!pics/photo/hometown-1-fixed.jpg
+!pics/photo/hometown-2-fixed.jpg
+!pics/photo/hometown-3.jpg
+
+# Outreach images
+!pics/outreach/
+!pics/outreach/Atlanta Science Festival.HEIC.png
+!pics/outreach/new-american-pathways-camp.jpeg
+!pics/outreach/BrainBee.HEIC.png
+!pics/outreach/Music for mental health.HEIC.png
+!pics/outreach/IMG_1750 2.HEIC.png
