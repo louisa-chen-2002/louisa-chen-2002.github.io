@@ -10,6 +10,32 @@ const journalIndex = document.querySelector("[data-journal-index]");
 const journalLinks = document.querySelectorAll("[data-entry-target]");
 const journalPosts = document.querySelectorAll("[data-entry-post]");
 const journalBackLinks = document.querySelectorAll("[data-entry-back]");
+const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+const siteHeader = document.querySelector(".site-header");
+const siteNavLinks = document.querySelectorAll(".site-nav .nav-link");
+
+function closeMobileNav() {
+  if (!mobileNavToggle || !siteHeader) {
+    return;
+  }
+
+  siteHeader.classList.remove("nav-open");
+  mobileNavToggle.setAttribute("aria-expanded", "false");
+  mobileNavToggle.setAttribute("aria-label", "Open navigation menu");
+}
+
+function toggleMobileNav() {
+  if (!mobileNavToggle || !siteHeader) {
+    return;
+  }
+
+  const isOpen = siteHeader.classList.toggle("nav-open");
+  mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+  mobileNavToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+}
 
 function showPanel(panelId) {
   navLinks.forEach((link) => {
@@ -28,6 +54,7 @@ function showPanel(panelId) {
   });
 
   document.body.classList.toggle("more-about-active", panelId === "more-about");
+  closeMobileNav();
 }
 
 function showSubpanel(subpanelId) {
@@ -104,6 +131,18 @@ navLinks.forEach((link) => {
     if (panelId !== "more-about") {
       showJournalIndex();
     }
+  });
+});
+
+if (mobileNavToggle) {
+  mobileNavToggle.addEventListener("click", () => {
+    toggleMobileNav();
+  });
+}
+
+siteNavLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    closeMobileNav();
   });
 });
 
