@@ -129,6 +129,20 @@ a.cv-link {
   box-shadow: 0 6px 16px rgba(49, 76, 96, 0.06);
 }
 
+.mobile-nav-bars {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.mobile-nav-bars span {
+  display: block;
+  width: 1rem;
+  height: 1.6px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1525,6 +1539,10 @@ a.cv-link {
     padding-bottom: 0.8rem;
   }
 
+  .site-header-top {
+    justify-content: flex-start;
+  }
+
   .site-title,
   .site-title-button,
   .nav-link {
@@ -1533,7 +1551,8 @@ a.cv-link {
   }
 
   .site-title-button {
-    max-width: calc(100% - 3.8rem);
+    order: 2;
+    max-width: calc(100% - 5rem);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1544,11 +1563,15 @@ a.cv-link {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 2.3rem;
-    height: 2.3rem;
+    order: 1;
+    min-width: 2.45rem;
+    height: 2.45rem;
     padding: 0;
-    font-size: 1.02rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     line-height: 1;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .site-nav {
@@ -1627,8 +1650,9 @@ a.cv-link {
   }
 
   .hero-intro {
-    text-align: center;
+    text-align: left;
     width: 100%;
+    max-width: 34rem;
     order: 1;
   }
 
@@ -1650,12 +1674,13 @@ a.cv-link {
   }
 
   .icon-links {
-    max-width: 320px;
+    width: fit-content;
+    max-width: none;
     flex-wrap: nowrap;
     justify-content: center;
     padding-left: 0;
     margin-top: 0.85rem;
-    gap: 0.7rem;
+    gap: 0.55rem;
   }
 
   .home-section,
@@ -1668,7 +1693,7 @@ a.cv-link {
   }
 
   .section-heading {
-    text-align: center;
+    text-align: left;
   }
 
   .news-list,
@@ -1685,6 +1710,8 @@ a.cv-link {
     width: auto;
     margin-top: 0;
     white-space: nowrap;
+    font-size: 1.12rem;
+    flex: 0 0 auto;
   }
 
   .news-item {
@@ -1719,7 +1746,7 @@ a.cv-link {
   .outreach-heading,
   .journal-home-title,
   .journal-side-title {
-    text-align: center;
+    text-align: left;
   }
 
   .subnav,
