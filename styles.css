@@ -1548,9 +1548,9 @@ a.cv-link {
     top: 0;
     z-index: 45;
     padding-top: max(0.35rem, env(safe-area-inset-top));
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: var(--bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .site-header-top {
