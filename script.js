@@ -13,6 +13,8 @@ const journalBackLinks = document.querySelectorAll("[data-entry-back]");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const siteHeader = document.querySelector(".site-header");
 const siteNavLinks = document.querySelectorAll(".site-nav .nav-link");
+const newsMoreButton = document.querySelector("[data-news-more]");
+const extraNewsItems = document.querySelectorAll("[data-news-extra]");
 
 function closeMobileNav() {
   if (!mobileNavToggle || !siteHeader) {
@@ -137,6 +139,19 @@ navLinks.forEach((link) => {
 if (mobileNavToggle) {
   mobileNavToggle.addEventListener("click", () => {
     toggleMobileNav();
+  });
+}
+
+if (newsMoreButton) {
+  newsMoreButton.addEventListener("click", () => {
+    const isExpanded = newsMoreButton.getAttribute("aria-expanded") === "true";
+
+    extraNewsItems.forEach((item) => {
+      item.hidden = isExpanded;
+    });
+
+    newsMoreButton.setAttribute("aria-expanded", String(!isExpanded));
+    newsMoreButton.textContent = isExpanded ? "Show More" : "Show Less";
   });
 }
 

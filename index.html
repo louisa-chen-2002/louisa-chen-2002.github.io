@@ -122,7 +122,7 @@
             <div class="section-heading compact">
               <h2 class="home-news-title">News &amp; Updates</h2>
             </div>
-            <div class="news-list" aria-label="News items">
+            <div class="news-list" id="news-list" aria-label="News items">
               <p class="news-item">
                 <span class="news-date-chip">09/2026</span>
                 <span class="news-item-text">
@@ -167,7 +167,7 @@
                   <a href="https://cognitivesciencesociety.org/">Cognitive Science Society</a>.
                 </span>
               </p>
-              <p class="news-item">
+              <p class="news-item" data-news-extra hidden>
                 <span class="news-date-chip">04/2025</span>
                 <span class="news-item-text">
                   One full paper
@@ -175,14 +175,23 @@
                   was accepted to CogSci 2025!
                 </span>
               </p>
-              <p class="news-item">
+              <p class="news-item" data-news-extra hidden>
                 <span class="news-date-chip">04/2025</span>
                 <span>Presented my work at the Emory Psychology Research Seminar!</span>
               </p>
-              <p class="news-item">
+              <p class="news-item" data-news-extra hidden>
                 <span class="news-date-chip">08/2024</span>
                 <span>Started my Ph.D. at Emory!</span>
               </p>
+              <button
+                class="news-more-button"
+                type="button"
+                data-news-more
+                aria-controls="news-list"
+                aria-expanded="false"
+              >
+                Show More
+              </button>
             </div>
           </section>
 

@@ -47,7 +47,7 @@ a {
   text-decoration-color: var(--underline);
   text-decoration-thickness: 0.08rem;
   text-underline-offset: 0.14rem;
-  transition: color 180ms ease, text-decoration-color 180ms ease;
+  transition: color 180ms ease;
 }
 
 a:hover {
@@ -267,7 +267,7 @@ a.cv-link {
 
 .hero h1 {
   margin: 0 0 1rem;
-  font-family: "Rubik", sans-serif;
+  font-family: inherit;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -309,6 +309,10 @@ a.cv-link {
   font-size: 0.97rem;
   line-height: 1.56;
   color: var(--muted);
+}
+
+.news-item[hidden] {
+  display: none;
 }
 
 .stack-card,
@@ -697,7 +701,7 @@ a.cv-link {
 }
 
 .section-heading .home-news-title {
-  font-family: "Rubik", sans-serif;
+  font-family: inherit;
   font-size: 1.72rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -952,6 +956,29 @@ a.cv-link {
 .news-item-text {
   display: inline-block;
   padding-top: 0.18rem;
+}
+
+.news-more-button {
+  display: block;
+  justify-self: center;
+  width: 100%;
+  margin: 0.2rem auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(93, 138, 169, 0.78);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+
+.news-more-button:hover,
+.news-more-button:focus-visible {
+  color: var(--accent);
 }
 
 
@@ -1370,6 +1397,7 @@ a.cv-link {
 
 .publication-title-link {
   color: var(--accent-deep);
+  font-family: inherit;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1381,6 +1409,7 @@ a.cv-link {
 
 .publication-title-static {
   display: inline-block;
+  font-family: inherit;
 }
 
 .publication-title-light {
@@ -1391,6 +1420,12 @@ a.cv-link {
   font-size: 0.88rem;
   line-height: 1.45;
   color: #4a5661;
+}
+
+.news-date-chip,
+.news-date,
+.teaching-date {
+  font-family: inherit;
 }
 
 .publication-link-inline {
@@ -1810,6 +1845,10 @@ a.cv-link {
   .news-item > span:last-child,
   .news-item-text {
     padding-top: 0;
+  }
+
+  .news-more-button {
+    margin: 0.2rem auto 0;
   }
 
   .publication-featured {
