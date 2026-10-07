@@ -182,7 +182,8 @@ a.cv-link {
 
 .nav-link.active {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 400;
+  -webkit-text-stroke: 0.35px currentColor;
 }
 
 .nav-link.active::after {
@@ -1722,7 +1723,7 @@ a.cv-link {
 
   .site-nav .nav-link.active {
     color: var(--accent);
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .view-panel {
