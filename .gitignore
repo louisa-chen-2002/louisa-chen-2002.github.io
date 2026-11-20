@@ -4,6 +4,8 @@
 # Keep the git metadata and this ignore file itself.
 !.gitignore
 !.nojekyll
+!robots.txt
+!sitemap.xml
 
 # Core site files
 !index.html

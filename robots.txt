@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://louisa-chen-2002.github.io/sitemap.xml
