@@ -420,7 +420,18 @@ a.cv-link {
 }
 
 .view-panel[data-panel="more-about"] {
-  overflow: hidden;
+  overflow-y: auto;
+}
+
+.view-panel[data-panel="more-about"] .journal-shell {
+  height: auto;
+  min-height: 100%;
+  display: block;
+}
+
+.view-panel[data-panel="more-about"] .journal-scroll {
+  flex: none;
+  overflow: visible;
 }
 
 .journal-static {
@@ -471,6 +482,10 @@ a.cv-link {
 .journal-index,
 .journal-post {
   display: none;
+}
+
+.journal-index {
+  padding-top: 1rem;
 }
 
 .journal-index.active,
@@ -643,6 +658,36 @@ a.cv-link {
   box-shadow:
     0 10px 22px rgba(49, 76, 96, 0.08),
     0 3px 8px rgba(49, 76, 96, 0.04);
+}
+
+.ocean-gallery .journal-gallery-image {
+  aspect-ratio: 3 / 2;
+}
+
+.ocean-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.journal-post[data-entry-post="spring"] {
+  max-width: 900px;
+}
+
+.spring-gallery {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.spring-gallery .journal-gallery-item {
+  flex: 0 0 auto;
+}
+
+.spring-gallery .journal-gallery-image {
+  width: auto;
+  height: 280px;
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: initial;
 }
 
 .journal-entry-poem .journal-body {
@@ -1288,60 +1333,25 @@ a.cv-link {
 }
 
 .outreach-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
   max-width: 980px;
   margin: 0 auto;
   padding: 0.55rem 0.35rem 1.2rem;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: x proximity;
-  scrollbar-color: rgba(93, 138, 169, 0.28) transparent;
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
-}
-
-.outreach-grid::-webkit-scrollbar {
-  height: 4px;
-}
-
-.outreach-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.outreach-grid::-webkit-scrollbar-thumb {
-  background: rgba(93, 138, 169, 0.24);
-  border-radius: 999px;
-}
-
-.outreach-grid::-webkit-scrollbar-thumb:hover {
-  background: rgba(93, 138, 169, 0.34);
 }
 
 .outreach-card {
-  --card-rotation: -0.65deg;
-  flex: 0 0 340px;
-  scroll-snap-align: start;
-  border: 1px solid rgba(100, 94, 86, 0.18);
-  border-radius: 2px;
-  background: #fbfaf7;
-  overflow: hidden;
-  box-shadow: none;
-  transform: rotate(var(--card-rotation));
-  transition: transform 220ms ease-out, box-shadow 220ms ease-out, border-color 220ms ease-out;
-}
-
-.outreach-card:nth-child(2n) {
-  --card-rotation: 0.55deg;
-}
-
-.outreach-card:nth-child(3n) {
-  --card-rotation: -0.25deg;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  transition: transform 220ms ease-out;
 }
 
 .outreach-copy {
-  padding: 0.78rem 0.82rem 1rem;
+  padding: 0.7rem 0 0.35rem;
 }
 
 .outreach-card h3 {
@@ -1353,9 +1363,9 @@ a.cv-link {
   color: var(--text);
 }
 
-.outreach-meta {
+.outreach-card .outreach-meta {
   margin: 0;
-  color: rgba(93, 138, 169, 0.85);
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1371,14 +1381,14 @@ a.cv-link {
 .outreach-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 2px;
   transition: transform 240ms ease;
 }
 
 .outreach-card:hover {
-  transform: translateY(-3px) rotate(var(--card-rotation)) scale(1.008);
-  box-shadow: none;
+  transform: translateY(-3px);
 }
 
 .outreach-card:hover .outreach-photo {
@@ -1589,6 +1599,7 @@ a.cv-link {
 
   .outreach-grid {
     max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .journal-gallery {
@@ -1976,6 +1987,17 @@ a.cv-link {
     gap: 0.75rem;
   }
 
+  .spring-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .spring-gallery .journal-gallery-image {
+    height: min(220px, calc((100vw - 2.75rem) * 0.66));
+    max-width: 100%;
+  }
+
   .teaching-heading {
     margin-bottom: 1.35rem;
   }
@@ -2001,14 +2023,15 @@ a.cv-link {
 
   .outreach-grid {
     gap: 0.85rem;
+    grid-template-columns: 1fr;
   }
 
   .outreach-card {
-    flex-basis: min(88vw, 340px);
+    width: 100%;
   }
 
   .outreach-copy {
-    padding: 0.68rem 0.75rem 0.78rem;
+    padding: 0.68rem 0 0.35rem;
   }
 
   .outreach-shell {
