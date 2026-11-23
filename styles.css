@@ -139,13 +139,14 @@ a.cv-link {
 .mobile-nav-bars {
   display: inline-flex;
   flex-direction: column;
-  gap: 0.22rem;
+  gap: 4px;
 }
 
 .mobile-nav-bars span {
   display: block;
-  width: 0.86rem;
-  height: 1.45px;
+  width: 16px;
+  height: 2px;
+  flex: none;
   border-radius: 999px;
   background: currentColor;
 }
@@ -1627,6 +1628,7 @@ a.cv-link {
   }
 
   .site-header {
+    display: block;
     gap: 0.75rem;
     padding-bottom: 0.8rem;
     position: relative;
@@ -1641,8 +1643,8 @@ a.cv-link {
   .site-header-top {
     display: flex;
     align-items: center;
-    width: 100%;
-    position: relative;
+    width: calc(100% + 1.375rem);
+    position: static;
   }
 
   .site-title,
@@ -1654,9 +1656,10 @@ a.cv-link {
 
   .site-title-button {
     order: 1;
-    max-width: 100%;
-    width: 100%;
-    padding-right: 4.1rem;
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    padding-right: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1668,12 +1671,17 @@ a.cv-link {
     justify-content: center;
     flex-shrink: 0;
     order: 2;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    min-width: 2.18rem;
-    height: 2.18rem;
+    position: static;
+    transform: none;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--accent);
     font-size: 0.82rem;
     font-weight: 600;
     line-height: 1;
@@ -1682,19 +1690,24 @@ a.cv-link {
     z-index: 50;
   }
 
+  .mobile-nav-bars {
+    transform: translateY(-1px);
+  }
+
   .site-nav {
     display: none;
     width: min(9.8rem, calc(100vw - 5.8rem));
     position: absolute;
     top: calc(100% - 0.1rem);
-    right: 0;
+    right: -1.375rem;
     margin: 0;
-    padding: 0.65rem 0.72rem 0.2rem;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 14px 28px rgba(49, 76, 96, 0.08);
+    padding: 0.9rem 0.72rem;
+    border-radius: 3px;
+    background: var(--bg);
+    border: 0;
+    box-shadow:
+      0 12px 28px rgba(49, 76, 96, 0.1),
+      0 2px 6px rgba(49, 76, 96, 0.04);
     z-index: 49;
     transform-origin: top right;
   }
@@ -1705,8 +1718,16 @@ a.cv-link {
   }
 
   .site-nav {
-    gap: 0.45rem;
+    gap: 0.8rem;
     align-items: stretch;
+  }
+
+  .site-nav .nav-link {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.34rem 0.58rem;
   }
 
   .nav-link {
